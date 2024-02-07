@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/stock_db?serverTimezone=Asia/Shanghai&allowMultiQueries=true&rewriteBatchedStatements=true
+      username: root
+      password: ysyyrps2003.
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 初始连接数
+      initial-size: 6
+      # 最小连接池数量
+      min-idle: 2
+      # 最大连接池数量
+      max-active: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package:  com.example.blog.entity
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true #合理查询，自动处理异常页码
