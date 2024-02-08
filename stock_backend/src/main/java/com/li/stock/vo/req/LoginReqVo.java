@@ -18,5 +18,5 @@ public class LoginReqVo {
      */
     private String password;
     private String code;
-//    private String rkey;
+    private String sessionId;
 }

@@ -5,6 +5,8 @@ import com.li.stock.vo.req.LoginReqVo;
 import com.li.stock.vo.resp.LoginRespVo;
 import com.li.stock.vo.resp.R;
 
+import java.util.Map;
+
 /**
  * @Author LiMingYu
  * @Create 2024-02-07 14:36
@@ -19,4 +21,6 @@ public interface UserService {
     SysUser findByUsername(String username);
 
     R<LoginRespVo> login(LoginReqVo loginReqVo);
+
+    R<Map> getCaptchaCode();
 }

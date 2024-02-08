@@ -1,6 +1,11 @@
 package com.li.stock.mapper;
 
+import com.li.stock.pojo.domain.InnerMarketDomain;
 import com.li.stock.pojo.entity.StockMarketIndexInfo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Date;
+import java.util.List;
 
 /**
 * @author LiMY
@@ -21,5 +26,13 @@ public interface StockMarketIndexInfoMapper {
     int updateByPrimaryKeySelective(StockMarketIndexInfo record);
 
     int updateByPrimaryKey(StockMarketIndexInfo record);
+
+    /**
+     *
+     * @param date
+     * @param inner
+     * @return
+     */
+    List<InnerMarketDomain> getMarketInfo(@Param("curDate") Date date, @Param("marketCodes") List<String> inner);
 
 }

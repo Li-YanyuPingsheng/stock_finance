@@ -2,6 +2,9 @@ package com.li.stock.pojo.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -9,20 +12,24 @@ import lombok.Data;
  * @TableName sys_user
  */
 @Data
+@ApiModel(description = "用户信息")
 public class SysUser implements Serializable {
     /**
      * 用户id
      */
+    @ApiModelProperty(value = "用户主键id")
     private Long id;
 
     /**
      * 账户
      */
+    @ApiModelProperty(value = "用户账户")
     private String username;
 
     /**
      * 用户密码密文
      */
+    @ApiModelProperty(value = "用户密码")
     private String password;
 
     /**
